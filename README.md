@@ -36,17 +36,22 @@ Briefly outline the technologies, frameworks, and tools used in development.
 Describe the major technical or non-technical challenges your team encountered.
 
 ## 🏃 How to Run
-1. Clone the repository  
+Clone the repository  
    ```sh
    git clone https://github.com/your-repo.git
    ```
-2. Install dependencies  
+### Backend
+1. Navigate to the backend directory
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   cd code/src/backend
+   ```
+2. Install the dependencies  
+   ```sh
+   pip install -r requirements.txt
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   python main.py
    ```
 
 ## 🏗️ Tech Stack
