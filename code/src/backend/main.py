@@ -36,6 +36,17 @@ def userInfo():
     client = genai.Client(api_key = GEMINI_API_KEY)
 
 
+"""
+@request body
+{
+    userInfo: array of strings
+}
+
+@response body
+{
+    response: str
+}
+"""
 @app.route('/gatherInfo',methods=['POST'])
 def gatherInfo():
     userInfoArray = request.json['userInfo']
@@ -46,12 +57,39 @@ def gatherInfo():
     print(responseTextBox)
     return json.dumps({'response':responseTextBox}), 200
 
+
+"""
+@request body
+{
+    userInfo: str
+}
+
+@response body
+{
+    response: json
+}
+"""
 @app.route('/columnData',methods=['POST'])
 def columnData():
     columnData = request.json['userInfo']
-    dummyData = {"customer code": "Customer code","employee index": "Employee index: A active, B ex employed, F filial, N not employee, P pasive","customer's country residence": "Customer's Country residence","customer age": "Customer Age","customer seniority": "Customer seniority (in months)","channel used by the customer to join": "channel used by the customer to join","gross income of the household": "Gross income of the household","segmentation": "segmentation: 01 - VIP, 02 -Individuals 03 - college graduated","saving account": "Saving Account","guarantees": "Guarantees","current accounts": "Current Accounts","derivada account": "Derivada Account","payroll account": "Payroll Account","junior account": "Junior Account","más particular account": "Más particular Account","particular account": "particular Account","particular plus account": "particular Plus Account","short-term deposits": "Short-term deposits","medium-term deposits": "Medium-term deposits","long-term deposits": "Long-term deposits","e-account": "e-account","funds": "Funds","mortgage": "Mortgage","pensions": "Pensions","loans": "Loans","taxes": "Taxes","credit card": "Credit Card","securities": "Securities","home account": "Home Account","payroll": "Payroll","pensions": "Pensions","direct debit": "Direct Debit"}
+    dummyData = {"customer code": "Customer code","employee index": "Employee index","country residence": "Customer's Country residence","age": "Customer Age","seniority": "Customer seniority (in months)","channel": "channel used by the customer to join","gross income of the household": "Gross income of the household","segmentation": "01 - VIP, 02 -Individuals, 03 - college graduated","saving account": "Saving Account","guarantees": "Guarantees","current accounts": "Current Accounts","derivada account": "Derivada Account","payroll account": "Payroll Account","junior account": "Junior Account","más particular account": "Más particular Account","particular account": "particular Account","particular plus account": "particular Plus Account","short-term deposits": "Short-term deposits","medium-term deposits": "Medium-term deposits","long-term deposits": "Long-term deposits","e-account": "e-account","funds": "Funds","mortgage": "Mortgage","pensions": "Pensions","loans": "Loans","taxes": "Taxes","credit card": "Credit Card","securities": "Securities","home account": "Home Account","payroll": "Payroll","pensions": "Pensions","direct debit": "Direct Debit"}
     return json.dumps(dummyData), 200
 
+
+"""
+@request body
+{
+    userInfo: json
+}
+@response body
+{
+    response: {
+        responseImg : array of json {productName : str, productImage : imgPath},
+        reasonText : str
+    }
+}
+
+"""
 @app.route('/preferedProducts',methods=['POST'])
 def preferedProducts():
     userInfoArray = request.json['userInfo']
