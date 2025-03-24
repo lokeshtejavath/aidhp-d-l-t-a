@@ -74,11 +74,11 @@ def infer(cust_id=15906):
 def customer_info(cust_id=15906):
     cust_id = int(cust_id)
     row_1 = df_pivot_l[df_pivot_l["Applicant_ID"] == cust_id].drop(columns=["Applicant_ID","Unnamed: 0","Loan_Approval_Status"])
-    print(row_1)
-    return row_1.to_dict()
+    return row_1.to_dict(orient="records")[0]
 
 # main
-# c_id = 15906
-# customer_info(c_id)
+c_id = 15906
+c = customer_info(c_id)
+print(c)
 # r_suggestions, l_suggestions = infer(c_id)
 # print(r_suggestions, l_suggestions)
