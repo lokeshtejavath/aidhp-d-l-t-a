@@ -67,7 +67,7 @@ def infer(cust_id=15906):
     loan_suggestions = []
     if "Loans" in ranked_suggestions:
         xgboost_dict = infer_xgboost(cust_id)
-        loan_suggestions.append(xgboost_dict["Loan_Purpose"])
+        loan_suggestions = [xgboost_dict[0], xgboost_dict[1], xgboost_dict[2], xgboost_dict[3]]
     return ranked_suggestions, loan_suggestions
 
 # inference function for all the data we have on customer.
