@@ -88,8 +88,8 @@ def gatherInfo():
 def columnData():
     columnData = request.json['userInfo']
     customerID = request.json['customerID']
-    dummyData = {"customer code": "Customer code","employee index": "Employee index","country residence": "Customer's Country residence","age": "Customer Age","seniority": "Customer seniority (in months)","channel": "channel used by the customer to join","gross income of the household": "Gross income of the household","segmentation": "01 - VIP, 02 -Individuals, 03 - college graduated","saving account": "Saving Account","guarantees": "Guarantees","current accounts": "Current Accounts","derivada account": "Derivada Account","payroll account": "Payroll Account","junior account": "Junior Account","más particular account": "Más particular Account","particular account": "particular Account","particular plus account": "particular Plus Account","short-term deposits": "Short-term deposits","medium-term deposits": "Medium-term deposits","long-term deposits": "Long-term deposits","e-account": "e-account","funds": "Funds","mortgage": "Mortgage","pensions": "Pensions","loans": "Loans","taxes": "Taxes","credit card": "Credit Card","securities": "Securities","home account": "Home Account","payroll": "Payroll","pensions": "Pensions","direct debit": "Direct Debit"}
-    return json.dumps(dummyData), 200
+    data = Inference.customer_info(customerID)
+    return json.dumps(data), 200
 
 
 """
