@@ -56,20 +56,20 @@ def gatherInfo():
     userInfoArray = request.json['userInfo']
     print(userInfoArray)
     responseTextBox = ""
-    prompt = "you are a bank employee and you are trying to gather information about a customer with the following details: "
-    for i in range(len(userInfoArray)):
-        prompt += ", " + userInfoArray[i] + " "
-    prompt += " now please summarize the information you have gathered in a paragraph and your answer will be shown to user do not predict what user wants but simply summarize the information you have gathered do not put okay in start, but start with Based on the information we have gathered, "
-    print(prompt)
-    client = genai.Client(api_key = GEMINI_API_KEY)
-    res = client.models.generate_content(
-        model = "gemini-2.0-flash",
-        contents=prompt
-    )
-    responseTextBox = res.text
+    # prompt = "you are a bank employee and you are trying to gather information about a customer with the following details: "
     # for i in range(len(userInfoArray)):
-    #     responseTextBox += userInfoArray[i] + " "
-    # print(responseTextBox)
+    #     prompt += ", " + userInfoArray[i] + " "
+    # prompt += " now please summarize the information you have gathered in a paragraph and your answer will be shown to user do not predict what user wants but simply summarize the information you have gathered do not put okay in start, but start with Based on the information we have gathered, "
+    # print(prompt)
+    # client = genai.Client(api_key = GEMINI_API_KEY)
+    # res = client.models.generate_content(
+    #     model = "gemini-2.0-flash",
+    #     contents=prompt
+    # )
+    # responseTextBox = res.text
+    for i in range(len(userInfoArray)):
+        responseTextBox += userInfoArray[i] + " "
+    print(responseTextBox)
     return json.dumps({'response':responseTextBox}), 200
 
 
@@ -88,7 +88,8 @@ def gatherInfo():
 def columnData():
     columnData = request.json['userInfo']
     customerID = request.json['customerID']
-    data = Inference.customer_info(customerID)
+    # data = Inference.customer_info(customerID)
+    data = {"Customer code":15898,"Employee index: A active, B ex employed, F filial, N not employee":"A","Customer's Country residence":"ES","Customer":"Dafasdf"}
     return json.dumps(data), 200
 
 
@@ -111,34 +112,37 @@ def preferedProducts():
     # userInfoArray = request.json['userInfo']
     customerID = request.json['customerID']
     userSummary = request.json['userSummary']
-    test,test2 = Inference.infer(customerID)
-    imagePath = 'resources/img/25473.png'
+    # test,test2 = Inference.infer(customerID)
+    # imagePath = 'resources/img/25473.png'
+    # responseImg = []
+    # prompt = f'user summary is this {userSummary}, and we have suggested these products'
+    # for i in test:
+    #     prompt += ", " + i + " "
+    # if test2.count != 0:
+    #     prompt += "and we have also suggested these loans"
+    #     for i in test2:
+    #         prompt += ", " + i + " "
+    # prompt+=", now as bank employee explain it to the customer why these products are suggested"
+    # client = genai.Client(api_key = GEMINI_API_KEY)
+    # res = client.models.generate_content(
+    #     model = "gemini-2.0-flash",
+    #     contents=prompt
+    # )
     responseImg = []
-    prompt = f'user summary is this {userSummary}, and we have suggested these products'
-    for i in test:
-        prompt += ", " + i + " "
-    if test2.count != 0:
-        prompt += "and we have also suggested these loans"
-        for i in test2:
-            prompt += ", " + i + " "
-    prompt+=", now as bank employee explain it to the customer why these products are suggested"
-    client = genai.Client(api_key = GEMINI_API_KEY)
-    res = client.models.generate_content(
-        model = "gemini-2.0-flash",
-        contents=prompt
-    )
+    imagePath = 'resources/img/25473.png'
+    res = {"text":"alha omega"}
     for i in range(3):
         responseImg.append({"productName":i,"productImage":imagePath})
     return json.dumps({'response':responseImg,"reason":res.text}), 200
 
 
-@app.route('/getRecommendation',methods=['POST'])
-def getRecommendation():
-    test,test2 = Inference.infer(15898)
-    if test2.count == 0:
-        return json.dumps({'success':test}), 200
-    else:
-        return json.dumps({'success':test,'loan':test2}), 200
+# @app.route('/getRecommendation',methods=['POST'])
+# def getRecommendation():
+#     test,test2 = Inference.infer(15898)
+#     if test2.count == 0:
+#         return json.dumps({'success':test}), 200
+#     else:
+#         return json.dumps({'success':test,'loan':test2}), 200
 
 
 if __name__ == '__main__':
