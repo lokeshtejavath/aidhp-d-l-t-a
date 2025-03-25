@@ -78,7 +78,7 @@ def customer_info(cust_id=15906):
 
 # main
 c_id = 15906
-c = customer_info(c_id)
-print(c)
+# c = customer_info(c_id)
+# print(c)
 # r_suggestions, l_suggestions = infer(c_id)
 # print(r_suggestions, l_suggestions)

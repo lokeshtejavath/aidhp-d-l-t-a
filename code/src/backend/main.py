@@ -1,13 +1,17 @@
 from flask import Flask,json, jsonify, request
 from google import genai
+from flask_cors import CORS 
 import requests
 import os
 from dotenv import load_dotenv
+import Inference
+import pandas as pd
 
 GEMINI_API_KEY = os.getenv("gemini_Key")
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/healthCheck', methods=['GET'])
@@ -52,9 +56,20 @@ def gatherInfo():
     userInfoArray = request.json['userInfo']
     print(userInfoArray)
     responseTextBox = ""
+    prompt = "you are a bank employee and you are trying to gather information about a customer with the following details: "
     for i in range(len(userInfoArray)):
-        responseTextBox += userInfoArray[i] + " "
-    print(responseTextBox)
+        prompt += ", " + userInfoArray[i] + " "
+    prompt += " now please summarize the information you have gathered in a paragraph and your answer will be shown to user do not predict what user wants but simply summarize the information you have gathered do not put okay in start, but start with Based on the information we have gathered, "
+    print(prompt)
+    client = genai.Client(api_key = GEMINI_API_KEY)
+    res = client.models.generate_content(
+        model = "gemini-2.0-flash",
+        contents=prompt
+    )
+    responseTextBox = res.text
+    # for i in range(len(userInfoArray)):
+    #     responseTextBox += userInfoArray[i] + " "
+    # print(responseTextBox)
     return json.dumps({'response':responseTextBox}), 200
 
 
@@ -72,6 +87,7 @@ def gatherInfo():
 @app.route('/columnData',methods=['POST'])
 def columnData():
     columnData = request.json['userInfo']
+    customerID = request.json['customerID']
     dummyData = {"customer code": "Customer code","employee index": "Employee index","country residence": "Customer's Country residence","age": "Customer Age","seniority": "Customer seniority (in months)","channel": "channel used by the customer to join","gross income of the household": "Gross income of the household","segmentation": "01 - VIP, 02 -Individuals, 03 - college graduated","saving account": "Saving Account","guarantees": "Guarantees","current accounts": "Current Accounts","derivada account": "Derivada Account","payroll account": "Payroll Account","junior account": "Junior Account","más particular account": "Más particular Account","particular account": "particular Account","particular plus account": "particular Plus Account","short-term deposits": "Short-term deposits","medium-term deposits": "Medium-term deposits","long-term deposits": "Long-term deposits","e-account": "e-account","funds": "Funds","mortgage": "Mortgage","pensions": "Pensions","loans": "Loans","taxes": "Taxes","credit card": "Credit Card","securities": "Securities","home account": "Home Account","payroll": "Payroll","pensions": "Pensions","direct debit": "Direct Debit"}
     return json.dumps(dummyData), 200
 
@@ -92,15 +108,37 @@ def columnData():
 """
 @app.route('/preferedProducts',methods=['POST'])
 def preferedProducts():
-    userInfoArray = request.json['userInfo']
-    print(userInfoArray)
+    # userInfoArray = request.json['userInfo']
+    customerID = request.json['customerID']
+    userSummary = request.json['userSummary']
+    test,test2 = Inference.infer(customerID)
     imagePath = 'resources/img/25473.png'
-    reasonText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur diam molestie orci varius rutrum. Donec consectetur quis justo ut dignissim. Phasellus hendrerit finibus bibendum. Sed iaculis ipsum vel placerat laoreet. Ut eu arcu eu nisl commodo scelerisque. Nunc sed laoreet quam. Morbi sed tempus orci.'
     responseImg = []
+    prompt = f'user summary is this {userSummary}, and we have suggested these products'
+    for i in test:
+        prompt += ", " + i + " "
+    if test2.count != 0:
+        prompt += "and we have also suggested these loans"
+        for i in test2:
+            prompt += ", " + i + " "
+    prompt+=", now as bank employee explain it to the customer why these products are suggested"
+    client = genai.Client(api_key = GEMINI_API_KEY)
+    res = client.models.generate_content(
+        model = "gemini-2.0-flash",
+        contents=prompt
+    )
     for i in range(3):
-        responseImg.append({"productName":"alpha"+i,"productImage":imagePath})
-    return json.dumps({'response':responseImg,"reason":reasonText}), 200
+        responseImg.append({"productName":i,"productImage":imagePath})
+    return json.dumps({'response':responseImg,"reason":res.text}), 200
 
+
+@app.route('/getRecommendation',methods=['POST'])
+def getRecommendation():
+    test,test2 = Inference.infer(15898)
+    if test2.count == 0:
+        return json.dumps({'success':test}), 200
+    else:
+        return json.dumps({'success':test,'loan':test2}), 200
 
 
 if __name__ == '__main__':
