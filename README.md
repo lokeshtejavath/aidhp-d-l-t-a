@@ -1,4 +1,4 @@
-# 🚀 Banking Product Recommendation System 
+![image](https://github.com/user-attachments/assets/bcf0646c-a7bf-4582-b16e-99e60d7c9723)# 🚀 Banking Product Recommendation System 
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -22,7 +22,10 @@ We recommend product lines (from the major lines of business products WF has for
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+![Screenshot 1](![image](https://github.com/user-attachments/assets/d6972769-a343-4edf-998d-18cc6588dc4f))
+![Screenshot 2](![image](https://github.com/user-attachments/assets/ab084e7d-ecd2-462c-8c2e-216cfcd97e36))
+![Screenshot 3](![image](https://github.com/user-attachments/assets/5ee8bedd-3d09-4d55-ad83-01f6ab7adca3))
+![Screenshot 4](![image](https://github.com/user-attachments/assets/df4ddc6a-a99d-4176-b1c2-0c2f6c5a093c))
 
 ## 💡 Inspiration
 Financial products are a necessity for almost all individuals, and uniquely benefit all parties involved. Through them, customers are able to better manage their financial assets while also gaining the ability to achieve their overarching life-goals.
