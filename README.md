@@ -35,18 +35,18 @@ We believe that in today's world, the inefficiency of the financial industry in 
 Leveraging the power of Recommender Systems to generate personalized insights, we believe we can exploit this opportunity to create a better and more targeted customer journey. 
 
 ## ⚙️ What It Does
-#### (Input):- 
+### (Input):- 
 Our project lets a user input any context they'd like our system to have for generating recommendations along with their unique user ID (In a production environment, both of these can be easily inferred from data about the user). 
 ### (Output):-
 We generate 3 product lines that our system thinks will be of interest to the user based on the existing data we have, the context they've given us and their history of interactions with the bank at large. Alongside, we leverage genAI to explain our system's thinking, allowing our system to generate insights on why particularly a line of products may be of interest to a specific customer. 
 
 ## 🛠️ How We Built It
-#### Dataset:-
+### Dataset:-
 1. https://www.kaggle.com/competitions/santander-product-recommendation
 2. https://www.kaggle.com/competitions/playground-series-s4e10
 The first dataset contains a real-life record of all interactions of a bank's customers with their financial products, while the second contains synthetically generated data (based on a real-life dataset) of Loan Approval information. We leveraged this two datasets to model the information a financial institution may possess about their customers.
 
-#### Recommender:- 
+### Recommender:- 
 We built an integrated recommendation system using TensorFlow and Google Gemini, training it using these two datasets on kaggle. Our model is based on a Deep Neural Network that uses vector embeddings to understand user behavior at scale, utilizing it to generate recommendations for future items that a user would likely interact with. On top of this, we utlize a genAI Gemini model to convert the information the our Neural Network has learned into textual form to generate insights about the decisions the system is making, leading to an integrated Reason + Recommendation output.
 
 ## 🏃 How to Run
