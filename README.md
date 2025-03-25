@@ -44,6 +44,7 @@ We generate 3 product lines that our system thinks will be of interest to the us
 ### Dataset:-
 1. https://www.kaggle.com/competitions/santander-product-recommendation
 2. https://www.kaggle.com/competitions/playground-series-s4e10
+   
 The first dataset contains a real-life record of all interactions of a bank's customers with their financial products, while the second contains synthetically generated data (based on a real-life dataset) of Loan Approval information. We leveraged this two datasets to model the information a financial institution may possess about their customers.
 
 ### Recommender:- 
