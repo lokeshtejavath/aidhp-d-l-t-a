@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bcf0646c-a7bf-4582-b16e-99e60d7c9723)# 🚀 Banking Product Recommendation System 
+🚀 Banking Product Recommendation System 
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -76,5 +76,5 @@ Clone the repository
 ## 👥 Team
 - Aditya Srivastava - [GitHub](#) | [LinkedIn](#)
 - Stubh Lal - [GitHub](#) | [LinkedIn](#)
-- Lokesh Tanwar - [GitHub](#) | [LinkedIn](#)
+- Lokesh - [GitHub](#) | [LinkedIn](#)
 - Yukti Dahiya - [GitHub](#) | [LinkedIn](#)
