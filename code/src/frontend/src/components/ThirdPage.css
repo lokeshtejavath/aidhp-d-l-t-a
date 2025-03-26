@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Varela', sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 10px solid #FFCC02;
+  /* Yellow bottom border */
+}
+
+.paper {
+  padding: 20px;
+  text-align: left;
+}
+
+.header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: bold;
+  /* Ensure the text is bold */
+}
+
+.key-value-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Added more spacing between key-value pairs */
+  padding: 20px;
+  border: 2px solid #FFCC02;
+  /* Yellow border around the whole key-value pairs container */
+  border-radius: 8px;
+  /* Rounded corners for the box */
+  background-color: #fff9e6;
+  /* Light yellow background for the key-value container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Light shadow around the box */
+}
+
+.key-value-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.key {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  /* Slightly larger font for the keys */
+  color: #D41C2C;
+  /* Dark red for the key text */
+}
+
+.value {
+  flex: 2;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 16px;
+  /* Larger font for values */
+  color: #555;
+  /* Dark gray for the values */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buttonsubmit {
+  background-color: #F39C12 !important;
+  /* Yellow accent for the submit button */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttonsubmit:hover {
+  background-color: #e67e22;
+  /* Darker orange when hovered */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow on hover */
+}
+
+/* Loading bar container */
+.loading-container {
+  width: 100%;
+  height: 5px;
+  background-color: #f2f2f2;
+  /* Light grey background */
+  margin-top: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Loading bar animation */
+.loading-bar {
+  width: 0;
+  height: 100%;
+  background-color: #D41C2C;
+  /* Red color */
+  border-radius: 5px;
+  animation: loadingAnimation 2s infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

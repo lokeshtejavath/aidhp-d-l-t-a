@@ -1,0 +1,109 @@
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+}
+
+body {
+  font-family: 'Varela', sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  max-width: 345px;
+  margin: auto;
+  position: relative;
+  height: 250px;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for drop shadow */
+}
+
+/* Hover effect for card */
+.card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  /* Drop shadow on hover */
+}
+
+/* Hover effect for card media (image) */
+.card-media {
+  height: 140px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.reason-section {
+  margin-top: 40px;
+  text-align: center;
+  border: 2px solid #FFCC02;
+  /* Yellow border around the whole key-value pairs container */
+  border-radius: 8px;
+  /* Rounded corners for the box */
+  background-color: #fff9e6;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 50px;
+}
+
+.reason-header {
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+  margin-bottom: 10px;
+}
+
+.reason-text {
+  font-size: 18px;
+  font-family: 'Varela', sans-serif;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  max-width: 600px;
+  margin: auto;
+}
+
+.reason-content {
+  padding: 0em 5em 0em 5em;
+  text-align: left;
+}
+
+/* Action buttons initially hidden */
+.action-buttons {
+  display: none;
+  /* Hide the buttons by default */
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Center the buttons */
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  /* Space between buttons */
+}
+
+/* Show the buttons when card is hovered */
+.card:hover .action-buttons {
+  display: flex;
+}
+
+.action-buttons button {
+  font-family: 'Varela', sans-serif;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+/* Add specific style for Select and Delete buttons */
+.action-buttons .MuiButton-containedPrimary {
+  background-color: #007bff;
+}
+
+.action-buttons .MuiButton-containedSecondary {
+  background-color: #d9534f;
+}

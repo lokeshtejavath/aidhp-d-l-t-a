@@ -1,11 +1,9 @@
 from flask import Flask,json, jsonify, request
 from google import genai
 from flask_cors import CORS 
-import requests
 import os
 from dotenv import load_dotenv
 import Inference
-import pandas as pd
 
 GEMINI_API_KEY = os.getenv("gemini_Key")
 
@@ -32,13 +30,6 @@ def whyGenAI():
     print(res.text)
     return res.text, 200
     
-#TODO
-@app.route('/userInfo', methods=['POST'])
-def userInfo():
-    #params from Santander dataset
-    params = ["Customer code","Employee index: A active, B ex employed, F filial, N not employee, P pasive","Customer's Country residence","Customer's sex","Age","The date in which the customer became as the first holder of a contract in the bank","New customer Index. 1 if the customer registered in the last 6 months.","Customer seniority (in months)","1 (First/Primary), 99 (Primary customer during the month but not at the end of the month)","Last date as primary customer (if he isn't at the end of the month)","Customer type at the beginning of the month ,1 (First/Primary customer), 2 (co-owner ),P (Potential),3 (former primary), 4(former co-owner)","Customer relation type at the beginning of the month, A (active), I (inactive), P (former customer),R (Potential)","Residence index (S (Yes) or N (No) if the residence country is the same than the bank country)","Foreigner index (S (Yes) or N (No) if the customer's birth country is different than the bank country)","Spouse index. 1 if the customer is spouse of an employee","channel used by the customer to join","Deceased index. N/S","Addres type. 1, primary address","Province code (customer's address)","Province name","Activity index (1, active customer; 0, inactive customer)","Gross income of the household","segmentation: 01 - VIP, 02 - Individuals 03 - college graduated","Saving Account","Guarantees","Current Accounts","Derivada Account","Payroll Account","Junior Account","Más particular Account","particular Account","particular Plus Account","Short-term deposits","Medium-term deposits","Long-term deposits","e-account","Funds","Mortgage","Pensions","Loans","Taxes","Credit Card","Securities","Home Account","Payroll","Pensions","Direct Debit"]
-    client = genai.Client(api_key = GEMINI_API_KEY)
-
 
 """
 @request body
@@ -56,19 +47,19 @@ def gatherInfo():
     userInfoArray = request.json['userInfo']
     print(userInfoArray)
     responseTextBox = ""
-    # prompt = "you are a bank employee and you are trying to gather information about a customer with the following details: "
-    # for i in range(len(userInfoArray)):
-    #     prompt += ", " + userInfoArray[i] + " "
-    # prompt += " now please summarize the information you have gathered in a paragraph and your answer will be shown to user do not predict what user wants but simply summarize the information you have gathered do not put okay in start, but start with Based on the information we have gathered, "
-    # print(prompt)
-    # client = genai.Client(api_key = GEMINI_API_KEY)
-    # res = client.models.generate_content(
-    #     model = "gemini-2.0-flash",
-    #     contents=prompt
-    # )
-    # responseTextBox = res.text
+    prompt = "you are a bank employee and you are trying to gather information about a customer with the following details: "
     for i in range(len(userInfoArray)):
-        responseTextBox += userInfoArray[i] + " "
+        prompt += ", " + userInfoArray[i] + " "
+    prompt += " now please summarize the information you have gathered in a paragraph and your answer will be shown to user do not predict what user wants but simply summarize the information you have gathered do not put okay in start, but start with Based on the information we have gathered, "
+    print(prompt)
+    client = genai.Client(api_key = GEMINI_API_KEY)
+    res = client.models.generate_content(
+        model = "gemini-2.0-flash",
+        contents=prompt
+    )
+    responseTextBox = res.text
+    # for i in range(len(userInfoArray)):
+    #     responseTextBox += userInfoArray[i] + " "
     print(responseTextBox)
     return json.dumps({'response':responseTextBox}), 200
 
@@ -88,8 +79,8 @@ def gatherInfo():
 def columnData():
     columnData = request.json['userInfo']
     customerID = request.json['customerID']
-    # data = Inference.customer_info(customerID)
-    data = {"Customer code":15898,"Employee index: A active, B ex employed, F filial, N not employee":"A","Customer's Country residence":"ES","Customer":"Dafasdf"}
+    data = Inference.customer_info(customerID)
+    # data = {"Customer code":15898,"Employee index: A active, B ex employed, F filial, N not employee":"A","Customer's Country residence":"ES","Customer":"Dafasdf"}
     return json.dumps(data), 200
 
 
@@ -112,37 +103,34 @@ def preferedProducts():
     # userInfoArray = request.json['userInfo']
     customerID = request.json['customerID']
     userSummary = request.json['userSummary']
-    # test,test2 = Inference.infer(customerID)
-    # imagePath = 'resources/img/25473.png'
-    # responseImg = []
-    # prompt = f'user summary is this {userSummary}, and we have suggested these products'
-    # for i in test:
-    #     prompt += ", " + i + " "
-    # if test2.count != 0:
-    #     prompt += "and we have also suggested these loans"
-    #     for i in test2:
-    #         prompt += ", " + i + " "
-    # prompt+=", now as bank employee explain it to the customer why these products are suggested"
-    # client = genai.Client(api_key = GEMINI_API_KEY)
-    # res = client.models.generate_content(
-    #     model = "gemini-2.0-flash",
-    #     contents=prompt
-    # )
-    responseImg = []
+    userInfo = Inference.customer_info(customerID)
+    test,test2 = Inference.infer(customerID)
     imagePath = 'resources/img/25473.png'
-    res = {"text":"alha omega"}
+    responseImg = []
+    prompt = f'user summary is this {userSummary}, and we have suggested these products'
+    for i in test:
+        prompt += ", " + i + " "
+    if test2.count != 0:
+        prompt += "and we have also suggested these loans"
+        for i in test2:
+            prompt += ", " + i + " "
+    prompt+= " about the customer is "
+    for key in userInfo:
+        prompt += f", {key} is {userInfo[key]}"
+    prompt+=", now as bank employee explain it to the customer why these products are suggested, but start with Based on the information we have gathered, please do not refer to customer, your answer will be read by bank employee for customer, it should in lines of 'Based on the information we have gathered, we have suggested these products to you because'"
+
+    client = genai.Client(api_key = GEMINI_API_KEY)
+    res = client.models.generate_content(
+        model = "gemini-2.0-flash",
+        contents=prompt
+    )
+    # responseImg = []
+    # imagePath = 'resources/img/25473.png'
+    # res = {"text":"alha omega"}
     for i in range(3):
-        responseImg.append({"productName":i,"productImage":imagePath})
+        responseImg.append({"productName":test[i],"productImage":imagePath})
     return json.dumps({'response':responseImg,"reason":res.text}), 200
 
-
-# @app.route('/getRecommendation',methods=['POST'])
-# def getRecommendation():
-#     test,test2 = Inference.infer(15898)
-#     if test2.count == 0:
-#         return json.dumps({'success':test}), 200
-#     else:
-#         return json.dumps({'success':test,'loan':test2}), 200
 
 
 if __name__ == '__main__':

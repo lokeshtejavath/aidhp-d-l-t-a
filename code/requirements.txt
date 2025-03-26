@@ -1,4 +1,12 @@
 flask
-google
+google-genai
 dotenv
 requests
+pandas
+scikit-learn
+matplotlib
+seaborn
+numpy
+xgboost
+flask-cors
+tensorflow
