@@ -79,13 +79,28 @@ Clone the repository
    python main.py
    ```
 
+### Frontend
+1. Navigate to the frontend directory
+   ```sh
+   cd code/src/frontend
+   ```
+2. Install the dependencies  
+   ```sh
+   npm install
+   ```
+3. Run the project  
+   ```sh
+   npm start
+   ```
+
+
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
+- 🔹 Frontend: React 
+- 🔹 Backend: Flask
 - 🔹 Recommender: TensorFlow, Keras, XGBoost, Pandas, Kaggle
 
 ## 👥 Team
-- Aditya Srivastava - [GitHub](#) | [LinkedIn](#)
-- Stubh Lal - [GitHub](#) | [LinkedIn](#)
-- Lokesh - [GitHub](#) | [LinkedIn](#)
-- Yukti Dahiya - [GitHub](#) | [LinkedIn](#)
+- Aditya Srivastava - [GitHub](https://github.com/adisrivastava121) | [LinkedIn](https://www.linkedin.com/in/aditya-srivastava-73b28520b/)
+- Stubh Lal - [GitHub](https://github.com/Artshouldterrify) | [LinkedIn](https://www.linkedin.com/in/stubh-lal-085597163/)
+- Lokesh - [GitHub](https://github.com/lokeshtejavath) | [LinkedIn](https://www.linkedin.com/in/lokeshtejavath/)
+- Yukti Dahiya - [GitHub](https://github.com/YuktiDahiya) | [LinkedIn](https://www.linkedin.com/in/yukti-dahiya/)
