@@ -1,15 +1,15 @@
 🚀 Banking Product Recommendation System 
 
 ## 📌 Table of Contents
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Presentation](#Presentation) 
-- [Inspiration](#inspiration)
-- [What It Does](#what-it-does)
-- [How We Built It](#how-we-built-it)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
-- [Team](#team)
+- [Introduction](#🎯-introduction)
+- [Demo](#🎥-demo)
+- [Presentation](#🖼️-Screenshots) 
+- [Inspiration](#💡-inspiration)
+- [What-It-Does](#⚙️-what-it-does)
+- [How-We-Built-It](#🛠️-how-we-built-it)
+- [How-to-Run](#🏃-how-to-run)
+- [Tech-Stack](#🏗️-tech-stack)
+- [Team](#👥-team)
 
 ---
 
@@ -23,7 +23,7 @@ We recommend product lines (from the major lines of business products WF has for
 
 📹 [Click here to watch the Demo Video](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/demo.mp4?raw=true)
 
-🖼️ Screenshots:
+## 🖼️ Screenshots:
 
 
 [![Screenshot 1](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/first.jpg?raw=true)](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/first.jpg)
