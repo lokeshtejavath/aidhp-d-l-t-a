@@ -23,14 +23,13 @@ We recommend product lines (from the major lines of business products WF has for
 🖼️ Screenshots:
 
 
-![Screenshot 1](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/first.jpg)
+[![Screenshot 1](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/first.jpg?raw=true)](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/first.jpg)
 
+[![Screenshot 2](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/second.jpg?raw=true)](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/second.jpg)
 
-![Screenshot 2](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/second.jpg)
+[![Screenshot 3](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/third.jpg?raw=true)](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/third.jpg)
 
-![Screenshot 3](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/third.jpg)
-
-![Screenshot 4](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/fourth.jpg)
+[![Screenshot 4](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/fourth.jpg?raw=true)](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/fourth.jpg)
 <!-- display the screenshots -->
 
 
