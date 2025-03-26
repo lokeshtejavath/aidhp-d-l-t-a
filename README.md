@@ -19,7 +19,10 @@ A bank has a wealth of information about it's customers. This project aims to ut
 We recommend product lines (from the major lines of business products WF has for retail customers: Accounts/Credit Cards/Deposits/Loans/Investments/etc.) that the customer will potentially be interested in, leveraging GenAI to generate personalized insights that can be used to form a more effective strategy to approach these potential customers. 
 
 ## 🎥 Demo 
-📹 [Video Demo](https://drive.google.com/drive/folders/1GzQtuRuyRilDbH1sSKsiXE9sdYwZFQi_?usp=sharing)  
+📹 [Video Demo](https://drive.google.com/drive/folders/1GzQtuRuyRilDbH1sSKsiXE9sdYwZFQi_?usp=sharing)  drive link
+
+📹 [Click here to watch the Demo Video](https://github.com/ewfx/aidhp-d-l-t-a/blob/main/artifacts/demo/demo.mp4?raw=true)
+
 🖼️ Screenshots:
 
 
