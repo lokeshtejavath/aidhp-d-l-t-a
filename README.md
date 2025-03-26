@@ -22,10 +22,18 @@ We recommend product lines (from the major lines of business products WF has for
 📹 [Video Demo](https://drive.google.com/drive/folders/1GzQtuRuyRilDbH1sSKsiXE9sdYwZFQi_?usp=sharing)  
 🖼️ Screenshots:
 
-![Screenshot 1](![image](https://drive.google.com/file/d/1GEBdxAwLfpL9rKDd5t7NZUabnI8S7WCR/view?usp=drive_link))
-![Screenshot 2](![image](https://drive.google.com/file/d/1b-98vzjlFj6CUIF10sSXlXU8FbXASoGW/view?usp=drive_link))
-![Screenshot 3](![image](https://drive.google.com/file/d/1i2q8QtNhagXcdMXRREisqc9sK40BJAVR/view?usp=drive_link))
-![Screenshot 4](![image](https://drive.google.com/file/d/1QA87k0i5sI2LdEe1YykWcFgxf9Y3Ar15/view?usp=drive_link))
+
+![Screenshot 1](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/first.jpg)
+
+
+![Screenshot 2]https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/second.jpg)
+
+![Screenshot 3](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/third.jpg)
+
+![Screenshot 4](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/fourth.jpg)
+<!-- display the screenshots -->
+
+
 
 ## 💡 Inspiration
 Financial products are a necessity for almost all individuals, and uniquely benefit all parties involved. Through them, customers are able to better manage their financial assets while also gaining the ability to achieve their overarching life-goals.
