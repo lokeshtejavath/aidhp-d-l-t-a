@@ -100,6 +100,7 @@ Clone the repository
 - 🔹 Recommender: TensorFlow, Keras, XGBoost, Pandas, Kaggle
 
 ## 👥 Team
+- Surendra Kancherla (Mentor)
 - Aditya Srivastava - [GitHub](https://github.com/adisrivastava121) | [LinkedIn](https://www.linkedin.com/in/aditya-srivastava-73b28520b/)
 - Stubh Lal - [GitHub](https://github.com/Artshouldterrify) | [LinkedIn](https://www.linkedin.com/in/stubh-lal-085597163/)
 - Lokesh Tejavath - [GitHub](https://github.com/lokeshtejavath) | [LinkedIn](https://www.linkedin.com/in/lokeshtejavath/)
