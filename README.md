@@ -1,12 +1,12 @@
-# 🚀 Project Name
+🚀 Banking Product Recommendation System 
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
+- [Presentation](#Presentation) 
 - [Inspiration](#inspiration)
 - [What It Does](#what-it-does)
 - [How We Built It](#how-we-built-it)
-- [Challenges We Faced](#challenges-we-faced)
 - [How to Run](#how-to-run)
 - [Tech Stack](#tech-stack)
 - [Team](#team)
@@ -14,26 +14,41 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+A bank has a wealth of information about it's customers. This project aims to utilize said information to generate recommendations for new products that an existing/recently joined customer may be interested in.
 
-## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
+We recommend product lines (from the major lines of business products WF has for retail customers: Accounts/Credit Cards/Deposits/Loans/Investments/etc.) that the customer will potentially be interested in, leveraging GenAI to generate personalized insights that can be used to form a more effective strategy to approach these potential customers. 
+
+## 🎥 Demo 
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+![Screenshot 1](![image](https://github.com/user-attachments/assets/d6972769-a343-4edf-998d-18cc6588dc4f))
+![Screenshot 2](![image](https://github.com/user-attachments/assets/ab084e7d-ecd2-462c-8c2e-216cfcd97e36))
+![Screenshot 3](![image](https://github.com/user-attachments/assets/5ee8bedd-3d09-4d55-ad83-01f6ab7adca3))
+![Screenshot 4](![image](https://github.com/user-attachments/assets/df4ddc6a-a99d-4176-b1c2-0c2f6c5a093c))
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+Financial products are a necessity for almost all individuals, and uniquely benefit all parties involved. Through them, customers are able to better manage their financial assets while also gaining the ability to achieve their overarching life-goals.
+
+We believe that in today's world, the inefficiency of the financial industry in leveraging the data that they possess creates an opportunity to convert new customers given that these customers are approached with products specifically tailored to their lives, goals and characteristics. Often, institutions only recommend a generic set of widely-used financial products (like credit/deposits/savings accounts) to their mass retail-customer audience. This is contrary to the customer expectation of a personalized experience in today's highly data-driven user-centric world, and they therefore are less likely to respond to a telemarketer/an email about a Home Loan as opposed to a targeted Auto Loan when they're looking to purchase a vehicle. 
+
+Leveraging the power of Recommender Systems to generate personalized insights, we believe we can exploit this opportunity to create a better and more targeted customer journey. 
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+### (Input):- 
+Our project lets a user input any context they'd like our system to have for generating recommendations along with their unique user ID (In a production environment, both of these can be easily inferred from data about the user). 
+### (Output):-
+We generate 3 product lines that our system thinks will be of interest to the user based on the existing data we have, the context they've given us and their history of interactions with the bank at large. Alongside, we leverage genAI to explain our system's thinking, allowing our system to generate insights on why particularly a line of products may be of interest to a specific customer. 
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+### Dataset:-
+1. https://www.kaggle.com/competitions/santander-product-recommendation
+2. https://www.kaggle.com/competitions/playground-series-s4e10
+   
+The first dataset contains a real-life record of all interactions of a bank's customers with their financial products, while the second contains synthetically generated data (based on a real-life dataset) of Loan Approval information. We leveraged this two datasets to model the information a financial institution may possess about their customers.
 
-## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+### Recommender:- 
+We built an integrated recommendation system using TensorFlow and Google Gemini, training it using these two datasets on kaggle. Our model is based on a Deep Neural Network that uses vector embeddings to understand user behavior at scale, utilizing it to generate recommendations for future items that a user would likely interact with. On top of this, we utlize a genAI Gemini model to convert the information the our Neural Network has learned into textual form to generate insights about the decisions the system is making, leading to an integrated Reason + Recommendation output.
 
 ## 🏃 How to Run
 Clone the repository  
@@ -57,9 +72,10 @@ Clone the repository
 ## 🏗️ Tech Stack
 - 🔹 Frontend: React / Vue / Angular
 - 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Recommender: TensorFlow, Keras, XGBoost, Pandas, Kaggle
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- Aditya Srivastava - [GitHub](#) | [LinkedIn](#)
+- Stubh Lal - [GitHub](#) | [LinkedIn](#)
+- Lokesh - [GitHub](#) | [LinkedIn](#)
+- Yukti Dahiya - [GitHub](#) | [LinkedIn](#)
