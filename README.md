@@ -26,7 +26,7 @@ We recommend product lines (from the major lines of business products WF has for
 ![Screenshot 1](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/first.jpg)
 
 
-![Screenshot 2]https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/second.jpg)
+![Screenshot 2](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/second.jpg)
 
 ![Screenshot 3](https://raw.githubusercontent.com/ewfx/aidhp-d-l-t-a/main/artifacts/demo/third.jpg)
 
