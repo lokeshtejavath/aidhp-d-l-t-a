@@ -63,7 +63,7 @@ We built an integrated recommendation system using TensorFlow and Google Gemini,
 ## 🏃 How to Run
 Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/ewfx/aidhp-d-l-t-a.git
    ```
 ### Backend
 1. Navigate to the backend directory
