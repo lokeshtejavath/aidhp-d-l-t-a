@@ -19,13 +19,13 @@ A bank has a wealth of information about it's customers. This project aims to ut
 We recommend product lines (from the major lines of business products WF has for retail customers: Accounts/Credit Cards/Deposits/Loans/Investments/etc.) that the customer will potentially be interested in, leveraging GenAI to generate personalized insights that can be used to form a more effective strategy to approach these potential customers. 
 
 ## 🎥 Demo 
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](https://drive.google.com/drive/folders/1GzQtuRuyRilDbH1sSKsiXE9sdYwZFQi_?usp=sharing)  
 🖼️ Screenshots:
 
-![Screenshot 1](![image](https://github.com/user-attachments/assets/d6972769-a343-4edf-998d-18cc6588dc4f))
-![Screenshot 2](![image](https://github.com/user-attachments/assets/ab084e7d-ecd2-462c-8c2e-216cfcd97e36))
-![Screenshot 3](![image](https://github.com/user-attachments/assets/5ee8bedd-3d09-4d55-ad83-01f6ab7adca3))
-![Screenshot 4](![image](https://github.com/user-attachments/assets/df4ddc6a-a99d-4176-b1c2-0c2f6c5a093c))
+![Screenshot 1](![image](https://drive.google.com/file/d/1GEBdxAwLfpL9rKDd5t7NZUabnI8S7WCR/view?usp=drive_link))
+![Screenshot 2](![image](https://drive.google.com/file/d/1b-98vzjlFj6CUIF10sSXlXU8FbXASoGW/view?usp=drive_link))
+![Screenshot 3](![image](https://drive.google.com/file/d/1i2q8QtNhagXcdMXRREisqc9sK40BJAVR/view?usp=drive_link))
+![Screenshot 4](![image](https://drive.google.com/file/d/1QA87k0i5sI2LdEe1YykWcFgxf9Y3Ar15/view?usp=drive_link))
 
 ## 💡 Inspiration
 Financial products are a necessity for almost all individuals, and uniquely benefit all parties involved. Through them, customers are able to better manage their financial assets while also gaining the ability to achieve their overarching life-goals.
